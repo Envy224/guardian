@@ -1,0 +1,19 @@
+{
+  "name": "guardian-docs",
+  "version": "0.0.1",
+  "description": "Discord to Roblox ban bot.",
+  "main": "index.js",
+  "authors": {
+    "name": "cursecode",
+    "email": "contact@cursecode.me"
+  },
+  "repository": "https://github.com/northrbx/guardian/North Guardian",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}

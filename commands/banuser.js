@@ -46,8 +46,8 @@ module.exports = {
 
     const username = await noblox.getUsernameFromId(id);
 
-    const { error } = await supabase.from("bannedUsers").insert({
-      userId: parseInt(id),
+    const { error } = await supabase.from("bannedusers").insert({
+      userid: parseInt(id),
       username,
       reason: reason || "No reason provided.",
     });

@@ -36,7 +36,7 @@ module.exports = {
     }
 
     const { data: fetched, error: fetchError } = await supabase
-      .from("bannedGroups")
+      .from("bannedgroups")
       .select("id")
       .eq("id", id)
       .single();

@@ -36,9 +36,9 @@ module.exports = {
     }
 
     const { data: fetched, error: fetchError } = await supabase
-      .from("bannedUsers")
-      .select("userId")
-      .eq("userId", id)
+      .from("bannedusers")
+      .select("userid")
+      .eq("userid", id)
       .single();
 
     if (!fetched) {
@@ -62,9 +62,9 @@ module.exports = {
       );
     } else {
       const { error } = await supabase
-        .from("bannedUsers")
+        .from("bannedusers")
         .delete()
-        .eq("userId", id);
+        .eq("userid", id);
 
       if (error) {
         log.error(error.message);

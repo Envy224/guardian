@@ -11,21 +11,14 @@ module.exports = async function (client) {
   log("Realtime client started");
 
   await supabase
-    .from("bannedUsers")
-    .on("INSERT", async () => {
-      console.log("Insert!");
-    })
-    .subscribe();
-
-  await supabase
-    .from("bannedUsers")
+    .from("bannedusers")
     .on("INSERT", async (payload) => {
       const embed = {
         title: payload.new.username,
-        url: `https://www.roblox.com/users/${payload.new.userId}/profile`,
+        url: `https://www.roblox.com/users/${payload.new.userid}/profile`,
         color: config.embed.color || undefined,
         thumbnail: {
-          url: `https://www.roblox.com/headshot-thumbnail/image?userId=${payload.new.userId}&width=420&height=420&format=png`,
+          url: `https://www.roblox.com/headshot-thumbnail/image?userId=${payload.new.userid}&width=420&height=420&format=png`,
         },
         fields: [
           {
@@ -39,7 +32,7 @@ module.exports = async function (client) {
           },
           {
             name: "ID",
-            value: `\`${payload.new.userId.toString()}\``,
+            value: `\`${payload.new.userid.toString()}\``,
           },
         ],
         timestamp: payload.new.timestamp,
@@ -54,9 +47,9 @@ module.exports = async function (client) {
         .send({ embeds: [embed] });
 
       const { error } = await supabase
-        .from("bannedUsers")
-        .update({ messageId: message.id })
-        .eq("userId", payload.new.userId);
+        .from("bannedusers")
+        .update({ messageid: message.id })
+        .eq("userid", payload.new.userid);
 
       if (error) {
         throw new Error(error.message);
@@ -65,7 +58,7 @@ module.exports = async function (client) {
     .subscribe();
 
   await supabase
-    .from("bannedGroups")
+    .from("bannedgroups")
     .on("INSERT", async (payload) => {
       const groupInfo = await getGroupInfo(payload.new.id);
       const embed = {
@@ -117,8 +110,8 @@ module.exports = async function (client) {
         .send({ embeds: [embed] });
 
       const { error } = await supabase
-        .from("bannedGroups")
-        .update({ messageId: message.id })
+        .from("bannedgroups")
+        .update({ messageid: message.id })
         .eq("id", payload.new.id);
 
       if (error) {

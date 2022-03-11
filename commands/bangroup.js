@@ -43,7 +43,7 @@ module.exports = {
       );
     }
 
-    const { error } = await supabase.from("bannedGroups").insert({
+    const { error } = await supabase.from("bannedgroups").insert({
       id: parseInt(id),
       reason: reason || "No reason provided.",
     });

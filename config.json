@@ -3,12 +3,12 @@
     "type": "PLAYING",
     "text": "North Guardian"
   },
-  "guildId": "863125119782354965",
-  "applicationId": "946197264253218826",
-  "blacklistsChannelId": "945846721185972294",
+  "guildId": "SERVER_ID",
+  "applicationId": "APPLICATION_ID",
+  "blacklistsChannelId": "BLACKLISTS_CHANNEL_ID",
   "embed": {
     "enabled": true,
     "color": "#2F3136"
   },
-  "ownerId": "862719183447130122"
+  "ownerId": "YOUR_DISCORD_ID"
 }

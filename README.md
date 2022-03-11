@@ -15,7 +15,7 @@ git clone https://github.com/northrbx/guardian.git
 
 ## Usage
 
-You have to set up the .ENV but it should work
+Visit the documentation here: https://northguardian.netlify.app
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
